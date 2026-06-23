@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1.0); }
+}
+
+@keyframes sheen {
+  0% { transform: translateX(-150%) skewX(30deg); }
+  100% { transform: translateX(150%) skewX(30deg); }
+}
+
+@keyframes panBg {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes floatOrb {
+  0% { transform: translateY(0px) translateX(0px) rotate(0deg); opacity: 0.2; }
+  50% { transform: translateY(-40px) translateX(15px) rotate(180deg); opacity: 0.6; }
+  100% { transform: translateY(0px) translateX(0px) rotate(360deg); opacity: 0.2; }
+}
+
+@keyframes pulseGlow {
+  0% { transform: scale(1.0); filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.5)); }
+  50% { transform: scale(1.03); filter: drop-shadow(0 0 25px rgba(255, 0, 170, 0.8)); }
+  100% { transform: scale(1.0); filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.5)); }
+}
+
+@keyframes textGlowPulse {
+  0% { text-shadow: 0 0 8px rgba(0, 255, 247, 0.6), 0 0 20px rgba(138, 43, 226, 0.4); }
+  50% { text-shadow: 0 0 18px rgba(255, 0, 170, 0.95), 0 0 32px rgba(0, 212, 255, 0.7); }
+  100% { text-shadow: 0 0 8px rgba(0, 255, 247, 0.6), 0 0 20px rgba(138, 43, 226, 0.4); }
+}
+
+@keyframes lineFlow {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 0% 100%; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-sheen {
+  animation: sheen 3s infinite linear;
+}
+
+.animate-pan-bg {
+  animation: panBg 8s ease infinite;
+}
+
+.animate-float-1 {
+  animation: floatOrb 10s ease-in-out infinite;
+}
+
+.animate-float-2 {
+  animation: floatOrb 14s ease-in-out infinite -3s;
+}
+
+.animate-float-3 {
+  animation: floatOrb 18s ease-in-out infinite -7s;
+}
+
+.animate-glow-pulse {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+.animate-text-glow {
+  animation: textGlowPulse 2.5s ease-in-out infinite;
+}
+
+/* Custom scrollbars for clean menu lists */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* High fidelity receding TRON grid styling */
+.tron-grid {
+  background-image: 
+    linear-gradient(rgba(0, 212, 255, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.12) 1px, transparent 1px);
+  background-size: 50px 50px;
+  background-position: center;
+  transform: perspective(400px) rotateX(65deg);
+  transform-origin: top;
+  animation: lineFlow 12s linear infinite;
+}
+
+/* Deep Space space halo backdrop behind helix column */
+.helix-halo {
+  background: radial-gradient(circle, rgba(138, 43, 226, 0.25) 0%, rgba(0, 212, 255, 0.1) 40%, rgba(11, 16, 32, 0) 70%);
+}

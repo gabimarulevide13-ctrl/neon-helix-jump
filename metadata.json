@@ -1,0 +1,6 @@
+{
+  "name": "Neon Helix Jump",
+  "description": "Un jeu d'arcade 3D hyper-casual addictif où vous guidez une balle rebondissante à travers une tour hélicoïdale rotative aux couleurs néons vibrantes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
